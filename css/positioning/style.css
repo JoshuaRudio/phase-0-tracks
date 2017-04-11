@@ -1,19 +1,18 @@
 .octopus {
-	position: fixed;
-	left: 480px;
-	top: 200px;
+	margin-left: 480px;
+	margin-top: 100px;
 }
 
 .hat {
-	position: fixed;
-	left: 460px;
+	position: absolute;
+	left: 465px;
 	top: 145px;
 }
 
 .glasses {
-	position: fixed;
-	left:520px;
-	top: 300px;
+	position: absolute;
+	left:530px;
+	top: 297px;
 }
 
 .quote {
@@ -24,7 +23,7 @@
 	text-align: center;
 	color: yellow;
 	position: relative;
-	top: 400px;
+	top: 0px;
 }
 
 body {
@@ -32,9 +31,9 @@ body {
 }
 
 .words {
-    font-size: 48;
 	font-family: arial;
-	font-weight: bold;
 	text-align: center;
+	text-weight: bold;
 	color: limegreen;
+	font-size: 48px;
 }

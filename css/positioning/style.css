@@ -1,0 +1,40 @@
+.octopus {
+	position: fixed;
+	left: 480px;
+	top: 200px;
+}
+
+.hat {
+	position: fixed;
+	left: 460px;
+	top: 145px;
+}
+
+.glasses {
+	position: fixed;
+	left:520px;
+	top: 300px;
+}
+
+.quote {
+	font-weight: bold;
+	font-style: italic;
+	font-family: arial;
+	font size: 48;
+	text-align: center;
+	color: yellow;
+	position: relative;
+	top: 400px;
+}
+
+body {
+	background-color: navy;
+}
+
+.words {
+    font-size: 48;
+	font-family: arial;
+	font-weight: bold;
+	text-align: center;
+	color: limegreen;
+}

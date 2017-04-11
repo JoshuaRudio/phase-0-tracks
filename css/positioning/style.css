@@ -31,9 +31,9 @@ body {
 }
 
 .words {
-    font-size: 48;
 	font-family: arial;
-	font-weight: bold;
 	text-align: center;
+	text-weight: bold;
 	color: limegreen;
+	font-size: 48px;
 }

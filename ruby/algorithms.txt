@@ -2,8 +2,25 @@ Release 0
 
 Operating an elevator:
 
-1. Call elevator by pressing the up button if you want to go up a floor or press the down button if you would like to go down.
-2. When elevator doors open, go inside then face the doorway. Stay clear of the closing doors.
-3. On the button panel, press the button of the disired floor.
-4. Wait for elevator to travel to the floor and for the elevator doors to open.
+1. Call the elevator by pressing the up button if you want to go up a floor or press the down button if you would like to go down.
+2. When elevator doors open, go inside then face the doorway. 
+3. Stay clear of the closing doors.
+4. Decide which floor you would like to travel to.
+5. On the button panel, the buttons are numbers that represent which floor the elevator will travel to. Press your desired floor number.
+4. Wait for elevator to travel to the floor and the elevator doors will open to your desired floor.
 5. Exit the elevator.
+
+Release 1
+
+How to brush your teeth
+
+1. Hold your toothbrush in your dominant hand with the brush head in the same direction as your thumb with the brushes facing up.
+2. Squeeze half an inch of toothpaste onto the brushes of the toothbrush.
+3. Set the toothbrush on your front surface of your teeth so that the toothpaste is applied to your teeth.
+4. Beginning with the front of your upper teeth, brush your teeth in a horizontal back and forth motion with light pressure for 30 seconds. Do not swallow toothpaste.
+5. Repeat step 4 on front lower teeth.
+6. Repeat step 4 on back lower teeth.
+7. Repeat step 4 on back upper teeth.
+8. Spit toothpaste into the sink.
+9. Take a sip of water into your mouth and swiss water around and then spit into the sink again. Repeat as needed.
+10. Rinse off toothbrush.

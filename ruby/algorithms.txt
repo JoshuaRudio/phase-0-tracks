@@ -1,0 +1,9 @@
+Release 0
+
+Operating an elevator:
+
+1. Call elevator by pressing the up button if you want to go up a floor or press the down button if you would like to go down.
+2. When elevator doors open, go inside then face the doorway. Stay clear of the closing doors.
+3. On the button panel, press the button of the disired floor.
+4. Wait for elevator to travel to the floor and for the elevator doors to open.
+5. Exit the elevator.

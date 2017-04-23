@@ -1,0 +1,40 @@
+.column-1 {
+  width: 440px;
+  background-color: #f2f2f2;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.column-2 {
+  width: 440px;
+  background-color: #f2f2f2;
+  display: inline-block;
+  vertical-align: top;
+}
+
+body {
+  width: 960px;
+  background-color: white;
+}
+
+header {
+  border: 2px solid;
+  border-color:#d1d1d1;
+  margin: 10px;
+  padding: 10px;
+  top: 0px;
+}
+
+footer {
+  border: 2px solid;
+  border-color: #d1d1d1;
+  margin: 10px;
+  padding: 10px;
+  vertical-align: center;
+  text-align: center;
+  bottom: 0px;
+}
+
+* {
+  font-family: helvetica;
+}

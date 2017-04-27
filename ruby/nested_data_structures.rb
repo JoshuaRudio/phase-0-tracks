@@ -54,3 +54,5 @@ p hotel[:garage][:room_types]
 p hotel[:second_tower][:location_name]
 puts "I would like to stay in the " + hotel[:second_tower][:room_types][:bigger_room]
 puts "Please don't let me stay in the " + hotel[:garage][:room_types][:one_bed].downcase
+hotel[:first_tower][:food_options].push("Food Sample Stand")
+p hotel

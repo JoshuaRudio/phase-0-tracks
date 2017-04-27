@@ -1,6 +1,5 @@
 # Release 0: Implement a Simple Search
 
-=begin
 test_array = [33, 85, 27, 90, 15, 3] 
 
 number = 0
@@ -38,24 +37,10 @@ array_index
 end #method end
  
 p search_array(test_array,3)
-=end
+p search_array(test_array, 40)
 
 # Release 1 Calculate Fibonacci Numbers
 
-=begin
-fib(num)
-while loopcount < num
-	if loopcount == 0
-		fib.arr << 0
-	if loopcount == 1
-		fib.arr << 1
-	else
-		next_num = fib.arr [index-1] + [index-2]
-fib.arr << next_num
-loopcount += 1
-=end
-
-=begin
 def fib(x)
 	loopcount = 0
 	fib_array = []
@@ -73,9 +58,10 @@ def fib(x)
 end
 return fib_array
 end
+
 p fib(6)
 p fib(100)
-=end
+
 
 # Release 2: Sort an Array
 
@@ -107,5 +93,5 @@ end
 sample = [2, 5, 1, 6 , 8 ,30, 27]
 sample_v2 = [123, 24,  46, 98, 1, 509, 234, 279]
 
-p bubble_sort(sample)
 p bubble_sort(sample_v2)
+p bubble_sort(sample)

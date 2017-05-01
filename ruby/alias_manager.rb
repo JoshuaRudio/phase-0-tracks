@@ -1,5 +1,6 @@
 
 # Release 0
+
 =begin
 The goal is to take a spy's name and create a fake name by:
 Switching the first and last name, probably by using split(" ")
@@ -39,8 +40,6 @@ end
 
 vowels = swapped.join('')
 
-
-
 consonants = vowels.split('')
 
 consonants.map! do |char, index|
@@ -60,11 +59,16 @@ end
   
 # Release 1
 
+aliases = {}
+input = ""
+fake_name = ""
+
 puts "Welcome to my alias maker. Continually enter the name(s) you would like to incognitize. When finished, type 'quit.'"
-input = " "
+
 while input = gets.chomp
 	if input.split(" ").length > 1
-		alias_maker(input) unless input == "quit" || input == "Quit"
+		fake_name = alias_maker(input) unless input == "quit" || input == "Quit"
+		aliases[input.to_sym] = fake_name
 	else
 		puts "This alias maker requires at least a first and last name." unless input == "quit" || input == "Quit"
 	end
@@ -72,3 +76,10 @@ while input = gets.chomp
 	break if input == "quit" || input == "Quit"
 end
 puts "Thank you for using my alias maker"
+
+p aliases
+
+aliases.each do |real, fake|
+	puts "#{real} is also known as #{fake}."
+end
+

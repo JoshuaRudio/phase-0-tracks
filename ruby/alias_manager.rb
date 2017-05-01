@@ -11,10 +11,7 @@ Then change all the vowels in the name to the next vowel.
 =end
 
 def alias_maker(full_name)
-=begin
-names = full_name.split(" ")
-swapped = names[1] + names[0]
-=end
+
 if full_name.split(" ").length > 1
 	names = full_name.split(" ")
 else
@@ -53,7 +50,7 @@ consonants.map! do |char, index|
 end
 
 the_alias = consonants.join('')
-puts the_alias
+p the_alias
 
 end
   

@@ -2,6 +2,7 @@ class Santa
 	def initialize(gender, ethnicity)
 		@gender = gender
 		@ethnicity = ethnicity
+		puts "Initializing Santa instance ..."
 	end
 
 	def speak
@@ -13,9 +14,11 @@ class Santa
 		puts "That was a good #{cookie} cookie!"
 	end
 
+	# A method that ages Santa by one
 	def celebrate_birthday
 		@age += 1
 		puts "Happy birthday Santa! You're #{@age} now!"
+		@age
 	end
 
 	@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -30,18 +33,15 @@ class Santa
   end
 end
 
-#puts Santa.private_methods.sort
-
-#santa = Santa.new("Male", "White")
-#santa.speak
-#santa.eat_milk_and_cookies("chocolate chip")
-
 santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
-  puts "------------------------------"
-  puts "Initializing Santa instance..."
-  puts "This Santa is #{example_genders[i]} and #{example_ethnicities[i]}"
+
+genders = ["male", "female", "male", "female", "transgender", "gender fluid", "N/A", "bigender"]
+ethnicity = ["black", "asian", "white", "latino", "black", "asian", "white", "latino"]
+
+genders.length.times do |i|
+	santas << Santa.new(genders[i], ethnicity[i])
+end
+
+santas.each do
+	santas.speak
 end

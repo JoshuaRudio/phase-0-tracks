@@ -10,7 +10,7 @@ class Santa
 	end
 
 	def eat_milk_and_cookies(cookie)
-		cooke.downcase
+		cookie.downcase
 		puts "That was a good #{cookie} cookie!"
 	end
 

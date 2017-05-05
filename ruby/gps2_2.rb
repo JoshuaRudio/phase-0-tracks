@@ -70,3 +70,19 @@ add_to_list(list, "Ice Cream", 4)
 remove_from_list(list, "Lemonade")
 update_list(list, "Ice Cream", 1)
 print_list(list)
+
+# Reflect
+# I learned that writing pseudocode in basic English in a way take is 
+# easily translated into ruby code will be immensily helpful when the time
+# comes to actually write the methods you pseudcode.
+# My pair who was driving seemed like he knew a lot on proper pseucode coding
+# and programming so when the time came to decide between arrays and hashes,
+# we were already heading in the correct direction because he knew which route
+# to take.
+# A method will return the result of the blocks that occur inside the method.
+# In this exercice, we passed hashes, strings, and integers through our methods.
+# Information can be passed between methods simply by using the correct arguments
+# in the methods. 
+# The concepts of the purpose of good pseudocode were solidified in my learning
+# but the concepts of parameters and iterating hashes are still a little hazy 
+# to me but this exercise has helped me to understand the concepts better.

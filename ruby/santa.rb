@@ -1,7 +1,9 @@
 class Santa
 	def initialize(gender, ethnicity)
+		@age = rand(0..140)
 		@gender = gender
 		@ethnicity = ethnicity
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		puts "Initializing Santa instance ..."
 	end
 
@@ -14,27 +16,29 @@ class Santa
 		puts "That was a good #{cookie} cookie!"
 	end
 
-	# A method that ages Santa by one
 	def celebrate_birthday
 		@age += 1
-		puts "Happy birthday Santa! You're #{@age} now!"
-		@age
+	end
+# A method that takes a reindeer name as an argument and puts it in the last array slot.
+	def get_mad_at(reindeer)
+		@reindeer_ranking.each do |name, index|
+			if name == reindeer
+				name.last
+			end
+		end
 	end
 
-	@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	@age = 0
-	
+	# Getter methods
 	def ethnicity
 		@ethnicity
 	end
 
-	def gender=(new_gender)
-		@gender = new_gender
+	def age
+  	@age
   end
 end
 
 santas = []
-
 genders = ["male", "female", "male", "female", "transgender", "gender fluid", "N/A", "bigender"]
 ethnicity = ["black", "asian", "white", "latino", "black", "asian", "white", "latino"]
 
@@ -42,6 +46,5 @@ genders.length.times do |i|
 	santas << Santa.new(genders[i], ethnicity[i])
 end
 
-santas.each do
-	santas.speak
-end
+p santas[1].get_mad_at("Vixen")
+p santas[2].get_mad_at("Fake")

@@ -23,7 +23,7 @@ class Santa
 	def get_mad_at(reindeer)
 		@reindeer_ranking.each do |name, index|
 			if name == reindeer
-				name.last
+				@reindeer_ranking.insert(0, name).delete(name)
 			end
 		end
 	end

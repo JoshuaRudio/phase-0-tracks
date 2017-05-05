@@ -21,9 +21,12 @@ class Santa
 	end
 # A method that takes a reindeer name as an argument and puts it in the last array slot.
 	def get_mad_at(reindeer)
-		@reindeer_ranking.each do |name, index|
+		@reindeer_ranking.each do |name|
+			#For each reindeer, check if the name matches one of the reindeer
 			if name == reindeer
-				@reindeer_ranking.insert(0, name).delete(name)
+				@reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(@reindeer_ranking.index(name)))
+			else
+				@reindeer_ranking
 			end
 		end
 	end
@@ -47,4 +50,4 @@ genders.length.times do |i|
 end
 
 p santas[1].get_mad_at("Vixen")
-p santas[2].get_mad_at("Fake")
+p santas[2].get_mad_at("Rudolph")

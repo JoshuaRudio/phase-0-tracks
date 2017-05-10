@@ -19,3 +19,6 @@ function reverseString(string) {
 
 // Stores the result of "Hello!" thru reverseString into a variable called backwardsHello
 var backwardsHello = reverseString("Hello!");
+
+// Print the method to the console
+console.log(backwardsHello);

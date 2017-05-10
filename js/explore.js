@@ -22,3 +22,17 @@ var backwardsHello = reverseString("Hello!");
 
 // Print the method to the console
 console.log(backwardsHello);
+
+// Prints variable if 1 == 1
+if (1 == 1) {
+	console.log(backwardsHello);
+} else {
+	console.log("1 is not equal to 1!");
+}
+
+// Conditional statement to check if method does not run if a condition is false
+if (1 == 0) {
+	console.log(backwardsHello);
+} else {
+	console.log("1 is not equal to 0!");
+}

@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Chris McMenomy].
+# We spent [1.5] hours on this challenge.
 
 # EXPLANATION OF require_relative
 # require_relative is linking state_data.rb to my_solution.rb so that the data is available to read 
@@ -88,3 +88,21 @@ STATE_DATA.each_key { |state| VirusPredictor.new(state).virus_effects }
 
 #=======================================================================
 # Reflection Section
+#
+# The difference between the two different hash syntaxes is that a hash stored with a string will have a 
+# instance value each and every time it runs but a hash stored with a symbol will have the same value for
+# each and every instance.
+#
+# require_relative can be loaded by simply calling the name of the file in the same working directory where as
+# with require, you may load different libraries and gems but the path of the file needs to be written out as
+# the parameter
+#
+# In this challenge, we intially used .each to iterate thru the STATE_DATA hash but after refactoring, we 
+# iterated using .each_key, resulting in more readable code. 
+#
+# During the refactoring, I was amazed to find that the parameters were not even need when defining the methods.
+# I learned that one may spend many hours refactoring their code to make it as, DRY, readable, and/or efficient 
+# as possible. Also, eliminating variables like number_of_deaths and speed helped me to understand how refactoring
+# can make a big difference in how readable a program is.
+#
+# Refactoring was a concept that was solidified for me. I now better understand how to make my code more DRY.

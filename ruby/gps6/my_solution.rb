@@ -4,18 +4,22 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# require_relative is linking state_data.rb to my_solution.rb so that the data is available to read 
+# my_solution.rb. 
+# when using require, you can load other libraries but need to write the path to the file, with require_relative,
+# it is much simpler to load data by using the file name for the parameter.
+
 require_relative 'state_data'
 
 class VirusPredictor
-
+  # takes 3 arguments to declare attributes
+  # will run anytime a new instance is made
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+  # calls the other two methods in class in order to print out the results of the methods on each instance
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +27,8 @@ class VirusPredictor
 
   private
 
+    # calculates the number of deaths based on state population and population density 
+    # and will print them to console
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +47,8 @@ class VirusPredictor
 
   end
 
+  # calculates the speed of spread of the virus based on the state's population density
+  # the higher the density, the faster it travels, and prints the speed of spread.
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.

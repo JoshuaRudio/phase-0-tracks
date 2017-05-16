@@ -39,9 +39,9 @@ function keyValues(firstObject, secondObject) {
 	 }
   }
   if (match) {
-  	console.log(matchedValue)
+  	console.log(matchedValue);
   } else {
-  	console.log("No matching values")
+  	console.log("No matching values");
   }
 }
 
@@ -59,13 +59,11 @@ function randomStrings(int) {
 
 	for(var i = 0; i < int; i++) {
 		var word = [];
-	  min = Math.ceil(1);
-	  max = Math.floor(10);
 
 	  for(var e = 0; e < Math.random() * 10; e++) {
 	  	word += letters.charAt(Math.floor(Math.random() * letters.length));
 	 	}
-	 	words.push(word)
+	 	words.push(word);
 	}
 	console.log(words);
 	return words;
@@ -78,23 +76,25 @@ phraseLength(sampleArray);
 phraseLength(sampleArray2);
 
 // Driver code for keyValues
-var sampleObject1 = {name: "steven", age: 54}
-var sampleObject2 = {name: "Tamir", age: 54}
-var sampleObject3 = {animal: "Dog", legs: 4}
-var sampleObject4 = {animal: "Cat", legs: 4}
+var sampleObject1 = {name: "steven", age: 54};
+var sampleObject2 = {name: "Tamir", age: 54};
+var sampleObject3 = {animal: "Dog", legs: 4};
+var sampleObject4 = {animal: "Cat", legs: 4};
 
 keyValues(sampleObject1, sampleObject2);
 keyValues(sampleObject3, sampleObject4);
 keyValues(sampleObject4, sampleObject1);
+keyValues(sampleObject2, sampleObject3);
+keyValues({name: "Joshua", age: 25}, {name: "Rojine", age: 25})
 
 // Driver code for randomString passed through phraseLength
-phraseLength(randomStrings(1))
-phraseLength(randomStrings(2))
-phraseLength(randomStrings(3))
-phraseLength(randomStrings(4))
-phraseLength(randomStrings(5))
-phraseLength(randomStrings(6))
-phraseLength(randomStrings(7))
-phraseLength(randomStrings(8))
-phraseLength(randomStrings(9))
-phraseLength(randomStrings(10))
+phraseLength(randomStrings(1));
+phraseLength(randomStrings(2));
+phraseLength(randomStrings(3));
+phraseLength(randomStrings(4));
+phraseLength(randomStrings(5));
+phraseLength(randomStrings(6));
+phraseLength(randomStrings(7));
+phraseLength(randomStrings(8));
+phraseLength(randomStrings(9));
+phraseLength(randomStrings(10));

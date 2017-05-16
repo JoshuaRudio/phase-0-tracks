@@ -67,6 +67,7 @@ function randomStrings(int) {
 	 	}
 	 	words.push(word)
 	}
+	console.log(words);
 	return words;
 }
 
@@ -85,3 +86,15 @@ var sampleObject4 = {animal: "Cat", legs: 4}
 keyValues(sampleObject1, sampleObject2);
 keyValues(sampleObject3, sampleObject4);
 keyValues(sampleObject4, sampleObject1);
+
+// Driver code for randomString passed through phraseLength
+phraseLength(randomStrings(1))
+phraseLength(randomStrings(2))
+phraseLength(randomStrings(3))
+phraseLength(randomStrings(4))
+phraseLength(randomStrings(5))
+phraseLength(randomStrings(6))
+phraseLength(randomStrings(7))
+phraseLength(randomStrings(8))
+phraseLength(randomStrings(9))
+phraseLength(randomStrings(10))

@@ -35,45 +35,109 @@ def add_song(db, title, artist)
 	puts "#{title} by #{artist} was added to your playlist."
 end
 
+# view the entire table of songs
 def view_playlist(tracks)
 	puts "Playlist:"
 	puts "-------------------------------"
 	tracks.each do |song|
-		puts "#{song['title']} - #{song['artist']}"
+		puts "#{song['id']} - #{song['title'].capitalize} - #{song['artist']}"
 	end
 	puts "-------------------------------"
 end
 
+# search for songs by a particular artist
 def search_by_artist(db, artist)
 	puts "Searching for #{artist} in your playlist..."
-	song = db.execute("SELECT playlist.title FROM playlist WHERE playlist.artist=(?)", [artist])
-	puts "============================================"
+	song = db.execute("SELECT playlist.id, playlist.title FROM playlist WHERE playlist.artist=(?)", [artist])
+	puts "========================================"
 	song.each do |track|
-		puts "Now playing #{track['title']} by #{artist}"
+		puts "Now playing #{track['title'].capitalize} by #{artist}"
 	end
-	puts "============================================"
+	puts "========================================"
 end
 
+# begins playing a random song from the playlist
 def shuffle(playlist)
 	song = playlist.sample
-	puts "================================================="
+	puts "========================================"
 	puts "Now playing #{song['title'].capitalize} by #{song['artist']}"
-	puts "================================================="
+	puts "========================================"
 end
 
-#add_song(db, "Black Hole Sun", "Soundgarden")
-#add_song(db, "Car Radio", "Twenty One Pilots")
-#add_song(db, "Devastated", "Joey Bada$$")
-#puts db.execute("SELECT * FROM playlist")
+# completely ridiculous method to update who sings a song
+def update_song(db, song_int, new_artist)
+	song = db.execute("SELECT playlist.id, playlist.title FROM playlist WHERE playlist.id=(?)", [song])
+	db.execute("UPDATE playlist SET artist=(?) WHERE id=(?)", [new_artist, song_int])
+	song.each do |track|
+		puts "#{track['title']} is now performed by #{track['artist']}"
+	end
+end
+# Driver Code
 
-#view_playlist(playlist)
+=begin
+add_song(db, "Black Hole Sun", "Soundgarden")
+add_song(db, "Car Radio", "Twenty One Pilots")
+add_song(db, "Devastated", "Joey Bada$$")
+puts db.execute("SELECT * FROM playlist")
 
-#puts db.execute("SELECT playlist.title FROM playlist WHERE playlist.artist=(?)", ["Soundgarden"])
-#search_by_artist(db, "Soundgarden")
+view_playlist(playlist)
 
-# Adding more random songs
-#50.times do
-#	add_song(db, Faker::Hipster.word, Faker::RockBand.name)
-#end
+puts db.execute("SELECT playlist.id, playlist.title FROM playlist WHERE playlist.artist=(?)", ["Soundgarden"])
+search_by_artist(db, "Soundgarden")
+
+#Adding more random songs
+50.times do
+	add_song(db, Faker::Hipster.word, Faker::RockBand.name)
+end
 
 shuffle(playlist)
+search_by_artist(db, "Led Zeppelin")
+
+view_playlist(playlist)
+update_song(db, 50, "Metallica")
+view_playlist(playlist)
+=end
+
+# Begin UI
+
+puts "Welcome to your playlist!" 
+
+input = nil
+
+until input == "Quit" || input == "quit"
+	puts "What would you like to do?"
+	puts "1. Add Song to Playlist"
+	puts "2. View Playlist"
+	puts "3. Search by Artist"
+	puts "4. Feeling Lucky?"
+	puts "5. Change song artist (Original artist will still receive royalties)"
+	puts "Enter corresponding number:"
+	input = gets.chomp
+	if input == "1"
+		puts "What is the title of the song?"
+		title = gets.chomp
+		puts "Who sings it?"
+		artist = gets.chomp
+		add_song(db, title, artist)
+	elsif input == "2"
+		view_playlist(playlist)
+	elsif input == "3"
+		puts "Enter artist:"
+		artist_search = gets.chomp
+		search_by_artist(db, artist_search)
+	elsif input == "4"
+		shuffle(playlist)
+	elsif input == "5"
+		view_playlist(playlist)
+		puts "What's the number of the song to be changed?"
+		song_int = gets.chomp
+		puts "Who sings this song now?"
+		new_artist = gets.chomp
+		update_song(db, song_int, new_artist)
+		puts "*please restart playlist for change to take effect*"
+	else 
+		puts "Obladi Oblada life goes on brah!" unless input == "Quit" || input == "quit"
+	end
+end
+
+puts "Have a good day!"

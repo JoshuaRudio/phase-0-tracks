@@ -25,10 +25,9 @@ start_playlist = <<-SQL
 	);
 SQL
 
-playlist = db.execute("SELECT * FROM playlist")
-
 # make the playlist table (if it's not there already)
 db.execute(start_playlist)
+playlist = db.execute("SELECT * FROM playlist")
 
 # add a song to the playlist
 def add_song(db, title, artist)
@@ -37,16 +36,44 @@ def add_song(db, title, artist)
 end
 
 def view_playlist(tracks)
+	puts "Playlist:"
+	puts "-------------------------------"
 	tracks.each do |song|
-		puts "#{song['title']} by #{song['artist']}"
+		puts "#{song['title']} - #{song['artist']}"
 	end
+	puts "-------------------------------"
 end
 
-#def search_by_artist(artist)
-#	puts "Searching for #{artist} in your playlist"
-#	puts ""
+def search_by_artist(db, artist)
+	puts "Searching for #{artist} in your playlist..."
+	song = db.execute("SELECT playlist.title FROM playlist WHERE playlist.artist=(?)", [artist])
+	puts "============================================"
+	song.each do |track|
+		puts "Now playing #{track['title']} by #{artist}"
+	end
+	puts "============================================"
+end
 
+def shuffle(playlist)
+	song = playlist.sample
+	puts "================================================="
+	puts "Now playing #{song['title'].capitalize} by #{song['artist']}"
+	puts "================================================="
+end
+
+#add_song(db, "Black Hole Sun", "Soundgarden")
+#add_song(db, "Car Radio", "Twenty One Pilots")
 #add_song(db, "Devastated", "Joey Bada$$")
 #puts db.execute("SELECT * FROM playlist")
 
 #view_playlist(playlist)
+
+#puts db.execute("SELECT playlist.title FROM playlist WHERE playlist.artist=(?)", ["Soundgarden"])
+#search_by_artist(db, "Soundgarden")
+
+# Adding more random songs
+#50.times do
+#	add_song(db, Faker::Hipster.word, Faker::RockBand.name)
+#end
+
+shuffle(playlist)

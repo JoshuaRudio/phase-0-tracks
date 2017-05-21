@@ -1,0 +1,39 @@
+CHALLENGE 8.4 QUERIES
+
+You've joined two tables before. How do you join three?
+
+input:
+SELECT * 
+  FROM users 
+INNER JOIN reviews ON reviews.user_id = users.id 
+INNER JOIN businesses ON businesses.id = reviews.business_id;
+
+output:
+1|Bradford|Pitt|1|3|great for annulments, so sad.|1|1|1|Grundy Hollow Wedding Chapel
+2|Mandy|Kaling|2|1|they impounded my prius|2|2|2|Amir's Towing
+3|Angela|Jolie|3|5|there is actually a beagle there|3|3|3|The Beagle Nightclub
+
+There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+input:
+SELECT users.firstname, businesses.name, reviews.stars, reviews.comment 
+	FROM users 
+INNER JOIN reviews ON reviews.user_id = users.id 
+INNER JOIN businesses ON businesses.id = reviews.business_id;
+
+OUTPUT:
+Bradford|Grundy Hollow Wedding Chapel|3|great for annulments, so sad.
+Mandy|Amir's Towing|1|they impounded my prius
+Angela|The Beagle Nightclub|5|there is actually a beagle there
+
+How do you view the data of all three tables for just one particular business?
+
+input:
+SELECT * 
+  FROM users 
+INNER JOIN reviews ON reviews.user_id = users.id 
+INNER JOIN businesses ON businesses.id = reviews.business_id
+WHERE businesses.id=2;
+
+output:
+2|Mandy|Kaling|2|1|they impounded my prius|2|2|2|Amir's Towing

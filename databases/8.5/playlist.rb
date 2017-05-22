@@ -72,6 +72,7 @@ def update_song(db, song_int, new_artist)
 		puts "#{track['title']} is now performed by #{track['artist']}"
 	end
 end
+
 # Driver Code
 
 =begin
@@ -98,8 +99,7 @@ update_song(db, 50, "Metallica")
 view_playlist(playlist)
 =end
 
-# Begin UI
-
+# UI
 puts "Welcome to your playlist!" 
 
 input = nil
@@ -134,7 +134,6 @@ until input == "Quit" || input == "quit"
 		puts "Who sings this song now?"
 		new_artist = gets.chomp
 		update_song(db, song_int, new_artist)
-		puts "*please restart playlist for change to take effect*"
 	else 
 		puts "Obladi Oblada life goes on brah!" unless input == "Quit" || input == "quit"
 	end

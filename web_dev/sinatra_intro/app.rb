@@ -44,3 +44,41 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+# write a GET route that retrives
+# an address
+
+get '/contact' do
+  "<b>1234 Big Bird Ave <br>Farmville, USA</b>"
+end
+
+# write a GET route using 
+# query parameters
+
+get '/great_job/' do
+  name = params[:name]
+  if name
+    "Good job, #{params[:name]}!"
+  else
+    "Good job!"
+  end
+end
+
+# write a GET route to add
+# two numbers and respond
+# result
+
+get '/add/:num1/plus/:num2' do 
+  num1 = params[:num1].to_i
+  num2 = params[:num2].to_i
+  ans = num1 + num2
+  "#{ans.to_s}"
+end
+
+# get '/search/:campus' do
+#   campus = params[:campus]
+#   students = db.execute("SELECT * FROM students WHERE students.campus=?", [campus])[0]
+#   students.each do |student|
+#     "#{student['name']} attends in #{student['campus']}"
+#   end
+# end

@@ -75,10 +75,11 @@ get '/add/:num1/plus/:num2' do
   "#{ans.to_s}"
 end
 
-# get '/search/:campus' do
-#   campus = params[:campus]
-#   students = db.execute("SELECT * FROM students WHERE students.campus=?", [campus])[0]
-#   students.each do |student|
-#     "#{student['name']} attends in #{student['campus']}"
-#   end
-# end
+get '/search/:campus' do
+  students = db.execute("SELECT * FROM students WHERE students.campus=?", [params['campus']])
+  response = ""
+  students.each do |student|
+    response << "#{student['name']}: #{student['campus']}<br><br>"
+  end
+  response
+end

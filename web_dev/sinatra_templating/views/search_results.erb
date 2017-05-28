@@ -4,10 +4,11 @@
 	<title>Search Results</title>
 </head>
 <body>
-<!--   <ul>
-    <% @search_results.each do |student| %>
-      <li><%= student['name'] %> will attend the <%= student['campus'] %> campus.</li>
-    <% end %> 
-  </ul> -->
+	<h1>Students attending the <%= @searched_campus[0]['campus'] %> campus:</h1>
+	<ul>
+    <% @searched_campus.each do |student| %>
+      <li><%= student['name'] %>: <%= student['campus'] %></li>
+    <% end %>
+  </ul>
 </body>
 </html>

@@ -1,0 +1,32 @@
+body {
+	background-color: darkgray;
+	text-align: center;
+	font-family: courier;
+	display: block;
+}
+
+#container {
+	margin: auto;
+	width: 90%;
+	padding: 10px;
+	background-color: gray;
+	border: solid 3px green;
+}
+
+#photo {
+	width: 40%;
+	border-radius: 50%;
+	border: dashed 4px green;
+}
+
+#list {
+	text-align: center;
+	margin-left: 25%;
+	background-color: green;
+	border: solid 5px gold;
+}
+
+#caption {
+	color: gold;
+	font-size: 0.5em;
+}
